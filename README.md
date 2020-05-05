@@ -39,8 +39,6 @@ Project Deadline
 
 23rd June 2020 at 23:59 UTC/GMT
 Project Specification
-Project Specification {: #Project-Specification }
-
     
     Clean and simple design
     User access levels (client, administrator)
