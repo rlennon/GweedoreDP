@@ -165,4 +165,4 @@ Estimating Story Points Within Jira
 
 The teams team's velocity is calculated by dividing the the number of points burned each sprint divided by no of sprints. The Velocity chart from Jira (below) is used for this calculation.
 
-The teams current story point velocity is "<TBD once we have the first Sprint Planning session>".
+The teams current story point velocity is "<2>". (TBD once we have the first Sprint Planning session) 
