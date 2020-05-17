@@ -1,5 +1,6 @@
 <html>
 <body>
-<h2>Hello World!</h2>
+<h2>Hello Gweedore!!</h2>
+<a href="https://inishowen.ie/">Site we want to mimic</a>
 </body>
 </html>
