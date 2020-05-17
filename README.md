@@ -21,19 +21,21 @@ Preamble
 This is the online repository for the GweedoreDP. Due to Covid they find that they suddenly need a fast solution to provide online services to small local business and startups.  Services include administrative, funding, room booking and so on. In addition the InishowenDP have offered to supply online meeting rooms and other online resources. Your team has been requested to design a solution to be provided to the customer in seven weeks time. You should use slack, jira, github (repository to follow) and AWS to work out your solution.
 
 
-Our product will be delivered using an Agile methodology that embraces the DevOps culture. Please note that our culture embraces change and these documents are treated as living, breathing artefacts that will be continuously updated.
+Our product will be delivered using an Agile methodology that embraces the DevOps culture. Please note that our culture embraces change and these documents are treated as living, breathing artefacts that will be continuously updated.  
+
+```
 Product Owner
-
 Ruth G. Lennon
-Team Members
-Brandon
-Jeremy
-Lisa
-Sowmya
-Eric
-Lakshmi
-Gary
 
+Team Members
+Brandon  
+Jeremy  
+Lisa  
+Sowmya  
+Eric  
+Lakshmi  
+Gary  
+```
 
 Project Deadline
 
@@ -54,9 +56,9 @@ Project Specification
 
 Useful Links
 
-    DC Slack: https://lyit.slack.com/archives/G01317VQNH2
-    Jira: 
-    GitHub: https://github.com/rlennon/ConnachtUni
+    Marvel Slack: https://lyit.slack.com/archives/G012SM6FUBX
+    Jira: https://studentjira.lyit.ie/
+    GitHub: https://github.com/rlennon/GweedoreDP
     Buy-Out Presentation: 
     Project close out presentation: 
 
@@ -115,7 +117,7 @@ Meetings
     Stand-ups will occur "<Tues & Thursday & Sunday at 4:00PM EST>".
     The order that people give their updates will be based on alphabetical order of those present at the meeting.
     Updates will be in the form: What I've done, What I plan to do, Impediments
-    Sprint planning will occur every "<14 days>".
+    Sprint planning will occur every "<7 days>".
     Please add and update items within Jira prior to the sprint planning session.
     Sprint retro will occur "<First part of every sprint planning will review the previous sprint>", "5/21 at 7:00 PM EST>".
     The order that people present their sprint retro updates will be based on alphabetical order of those present at the meeting.
@@ -157,12 +159,17 @@ Communication
 Other
 
     Sprints will start "<Thursday May 7 4:00 PM EST>"
-    The Scrum Master role rotates each week, the schedule is available on the on the process section
+    The Scrum Master role rotates each week, the schedule is available on the process section.
     Jira will be used for task management and planning.
-    Each member of the team will work "10 hours>" per week, unless they are on vacation.
+    Each member of the team will work "<10 hours>" per week, unless they are on vacation.
 
 Estimating Story Points Within Jira
 
 The teams team's velocity is calculated by dividing the the number of points burned each sprint divided by no of sprints. The Velocity chart from Jira (below) is used for this calculation.
 
-The teams current story point velocity is "<2>". (TBD once we have the first Sprint Planning session) 
+The teams current story point velocity is "<6>".  
+[Velocity Planning Sheet](../master/docs/LYITTeamMarvel_GweedoreDP_PlanningSheet.xlsx)
+
+
+16th May 2020
+Research and a working prototype with a sample maven java project with jenkins pipeline to compile the code and run unit tests have been created.
