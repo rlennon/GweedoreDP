@@ -11,7 +11,8 @@ import java.io.PrintWriter;
 @WebServlet(name = "/")
 public class Gweedore extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+    	//Some sample logic to demo unit test
+    	System.out.println("You are posting to GweedoreDP");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
