@@ -106,7 +106,7 @@ Tenants of Design
         automated creation and deployments
         integrated and automated pipeline (commit -> test -> deploy)
     Github version control:
-        branches used
+        [Branching Strategy](../docs/branching_strategy.md)
         version/release management
     Agile project management methods/principles (jira)
 
