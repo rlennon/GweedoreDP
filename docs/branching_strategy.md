@@ -14,12 +14,12 @@ This document outlines the team agreements of this strategy and provides example
 
 ## Branch Naming Conventions
 
-| Branch Name | Base Branch | Pull Request? | Description | Example |      
+| Branch Name | Base Branch | Pull Request Required to Merge? | Description | Example |      
 | ------------|------------------------|-------------|-------------|---------|
-| `master`    | N/A                    | N/A         | The source of truth branch.  Must always be stable and ready for Production deploy. | N/A
-| feature | `master`                          | NO   | Used for active development features (such as User Stories or code changes).  Merges into master from a Pull Request (required). | feature-GWEEDRDP-99-create-login-page
+| `master`    | N/A                    | YES        | The source of truth branch.  Must always be stable and ready for Production deploy. | N/A
+| feature | `master`                          | NO   | Used for active development features (such as User Stories or code changes).  Merges into master from a Pull Request (required). | feature-GWEEDRDP99-create-login-page
 | hotfix | `master`                       | NO    | Used for critical defect/bug fixes against production. Merges into master from a Pull Request (required). | hotfix-GWEEDRDP-99-broken-link
-| documentation | `master`                   | NO   | Used for updating project documentation. Merges into master from a Pull Request (required). | documentation
+| documentation | `master`                   | NO   | Used for updating project documentation. Merges into master from a Pull Request (TBD if required or not). | documentation
 
 ## Development Process for New Feature
 
