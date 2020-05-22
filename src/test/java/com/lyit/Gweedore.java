@@ -1,4 +1,4 @@
-package main.java.com.lyit;
+package test.java.com.lyit;
 
 public class Gweedore {
 
