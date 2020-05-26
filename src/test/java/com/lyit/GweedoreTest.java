@@ -1,4 +1,4 @@
-package com.lyit;
+package test.java.com.lyit;
 
 import static org.junit.Assert.*;
 
