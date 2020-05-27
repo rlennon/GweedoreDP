@@ -173,3 +173,5 @@ The teams current story point velocity is "<6>".
 
 16th May 2020
 Research and a working prototype with a sample maven java project with jenkins pipeline to compile the code and run unit tests have been created.
+
+The purpose of this branch is to maintain Sowmya (L00156772) Notes
