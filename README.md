@@ -26,13 +26,13 @@ Our product will be delivered using an Agile methodology that embraces the DevOp
 
 ## Team Members
        
-    Brandon
-    Jeremy
-    Lisa
-    Sowmya
-    Eric
-    Lakshmi
-    Gary
+    Brandon (L00156770)
+    Jeremy (L00156763)
+    Lisa (L00156762)
+    Sowmya (L00156772)
+    Eric (L00156782)
+    Lakshmi (L00156767)
+    Gary (L00156761)
 
 ## Project Deadline
 **23rd June 2020 at 23:59 UTC/GMT**
