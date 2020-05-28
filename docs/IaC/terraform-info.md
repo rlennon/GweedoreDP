@@ -1,7 +1,7 @@
 | [Return to README.MD](../../README.md)
 | ---------------------------------------------------- |
 
-# Infastructure as Code with Terraform Example
+# Infrastructure as Code with Terraform Example
 
 Team Marvel has selected Terraform to *provision* EC2 servers.
 
@@ -9,7 +9,7 @@ Team Marvel has selected Terraform to *provision* EC2 servers.
 - [Why Terraform?](#why-terraform?)
 - [Considerations](#team-marvel-considerations)
 
-## install-instructions using Ubunto/Linux
+## Install-instructions using Ubuntu/Linux
 
    1. Pre-req: Install Amazon CLI https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html 
       ```
@@ -41,7 +41,7 @@ Team Marvel has selected Terraform to *provision* EC2 servers.
       
 ## Why Terraform?
 
-   1. Terraform scripts are Infrastucture as Code and can be version controlled
+   1. Terraform scripts are Infrastructure as Code and can be version controlled
    2. Terraform provides an immutable approach which helps prevent configuration drift
    3. Quick setup for this small project example
    4. Terraform supports many different services/vendors
@@ -57,9 +57,11 @@ Team Marvel has selected Terraform to *provision* EC2 servers.
    can be built out to promote immutability, version control, and recovery.
    
 2. Security Considerations:  
-   -Do no hard code credentials into Terraform scripts, especially when pushed to VC like Github.
-   -Linux/Ubunto users should be restricted
-   -Secret keys should be carefully stored/logged as sensitive 
-   -IAM resrouces should be carefully provisioned (e.g. only allow staging or prod, restrict access appropriately, etc)
-   -IaC should be treated as code adhering to the same security policies 
+   -Do no hard code credentials/keys into Terraform scripts, especially when pushed to VC like Github
+   -Linux/Ubuntu users should be restricted
+   -Secret keys should be carefully stored and clearly logged for tracking as sensitive risk elements
+   -IAM resources should be carefully provisioned (e.g. only allow staging or prod, restrict access least privilege, etc)
+   -IaC should be treated as code adhering to the same security policies as code development
+   -Misconfigurations, default configurations, ad-hoc config changes are all triggers of security risks
+   -Security is everyone's responsibility
 
