@@ -15,5 +15,17 @@ pipeline {
                 '''
             }
         }
+        stage('Master Deploy') {
+            when {
+               branch 'master'
+            }
+            steps {
+                sh 'echo "Hello World from Master!"'
+                sh '''
+                    echo "Only runs in Master Branch"
+                    ls -lah
+                '''
+            }
+        }
     }
 }
