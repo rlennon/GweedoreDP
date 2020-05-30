@@ -1,10 +1,10 @@
 pipeline {
-    agent { docker { image 'maven:3.6.3' } }
+    agent { dockerfile true }
     stages {
         stage('build') {
             steps {
-                sh 'mvn --version'
-                sh 'mvn clean install'
+                def customImage = docker.build("my-image:${env.BUILD_ID}")
+                echo '${customImage}'
             }
             post {
                 success {
