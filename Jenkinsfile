@@ -1,7 +1,7 @@
 pipeline {
     environment {
         registry = "gweedore/gweedore"
-        registryCredential = ‘dockerhub’
+        registryCredential = 'dockerhub'
     }
 
     agent { label 'docker' }
