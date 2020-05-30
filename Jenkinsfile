@@ -4,7 +4,15 @@ pipeline {
         stage('build') {
             steps {
                 sh 'mvn --version'
-                sh 'mvn clean package'
+                sh 'mvn clean install'
+            }
+            post {
+                success {
+                    sh 'echo "Success!"'
+                }
+                failure {
+                    sh 'echo "Failure :("'
+                }
             }
         }
         stage('Master Deploy') {
