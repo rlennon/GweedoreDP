@@ -1,10 +1,15 @@
 pipeline {
-    agent { dockerfile true }
+    environment {
+        registry = "gweedore/gweedore"
+        registryCredential = ‘dockerhub’
+    }
+
+    agent { label 'docker' }
+
     stages {
         stage('build') {
             steps {
-                def customImage = docker.build("my-image:${env.BUILD_ID}")
-                echo '${customImage}'
+                sh 'docker build -t gweedore/gweedore:latest .'
             }
             post {
                 success {
@@ -15,17 +20,14 @@ pipeline {
                 }
             }
         }
-        stage('Master Deploy') {
-            when {
-               branch 'master'
+        stage('Deploy Image') {
+          steps {
+            script {
+              docker.withRegistry( '', registryCredential ) {
+                dockerImage.push()
+              }
             }
-            steps {
-                sh 'echo "Hello World from Master!"'
-                sh '''
-                    echo "Only runs in Master Branch"
-                    ls -lah
-                '''
-            }
+          }
         }
     }
 }
