@@ -55,7 +55,7 @@ tr:nth-child(even) {
     <td>VP Network</td>
   </tr>
     <tr>
-    <td>Sowmya Muddena Thimmaiah</td>
+    <td>Sowmya M Thimmaiah</td>
     <td>VP Marketing</td>
   </tr>
   
