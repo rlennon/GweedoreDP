@@ -2,14 +2,15 @@ pipeline {
     environment {
         registry = "gweedore/gweedore"
         registryCredential = 'dockerhub'
+        dockerImage = ''
     }
 
     agent any
 
     stages {
         stage('build') {
-            steps {
-                sh 'docker build -t gweedore/gweedore:latest .'
+            script {
+                dockerImage = docker.build registry + ":$BUILD_NUMBER"
             }
             post {
                 success {
@@ -21,13 +22,13 @@ pipeline {
             }
         }
         stage('Deploy Image') {
-          steps {
-            script {
-              docker.withRegistry( '', registryCredential ) {
-                dockerImage.push()
-              }
+            steps{
+                script {
+                    docker.withRegistry( '', registryCredential ) {
+                        dockerImage.push()
+                    }
+                }
             }
-          }
         }
     }
 }
