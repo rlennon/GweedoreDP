@@ -24,6 +24,9 @@ pipeline {
             }
         }
         stage('Deploy Image') {
+            when {
+                branch 'master'
+            }
             steps{
                 script {
                     docker.withRegistry( '', registryCredential ) {
@@ -33,6 +36,9 @@ pipeline {
             }
         }
         stage('Cleaning up') {
+            when {
+                branch 'master'
+            }
             steps{
                 sh "docker rmi $registry:$BUILD_NUMBER"
             }
