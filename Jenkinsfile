@@ -13,13 +13,13 @@ pipeline {
                 script {
                     dockerImage = docker.build registry + ":$BUILD_NUMBER"
                 }
-                post {
-                    success {
-                        sh 'echo "Success!"'
-                    }
-                    failure {
-                        sh 'echo "Failure :("'
-                    }
+            }
+            post {
+                success {
+                    sh 'echo "Success!"'
+                }
+                failure {
+                    sh 'echo "Failure :("'
                 }
             }
         }
