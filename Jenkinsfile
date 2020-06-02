@@ -36,9 +36,6 @@ pipeline {
             }
         }
         stage('Cleaning up') {
-            when {
-                branch 'master'
-            }
             steps{
                 sh "docker rmi $registry:$BUILD_NUMBER"
             }
