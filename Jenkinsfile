@@ -9,15 +9,17 @@ pipeline {
 
     stages {
         stage('build') {
-            script {
-                dockerImage = docker.build registry + ":$BUILD_NUMBER"
-            }
-            post {
-                success {
-                    sh 'echo "Success!"'
+            steps{
+                script {
+                    dockerImage = docker.build registry + ":$BUILD_NUMBER"
                 }
-                failure {
-                    sh 'echo "Failure :("'
+                post {
+                    success {
+                        sh 'echo "Success!"'
+                    }
+                    failure {
+                        sh 'echo "Failure :("'
+                    }
                 }
             }
         }
