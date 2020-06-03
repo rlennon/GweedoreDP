@@ -1,13 +1,13 @@
 # Terraform configuration
 
 resource "aws_instance" "master" {
-  ami           	= var.ami_id
-  count 		= 1
-  instance_type 	= var.instance_type
-  key_name 		= var.aws_team_key_id
+  ami = var.ami_id
+  count = var.instance_count
+  instance_type = var.instance_type
+  key_name = var.aws_team_key_id
   iam_instance_profile  = var.iam_profile_aws
-  security_groups  	= [ var.security_group_aws ]
-  #subnet_id 		= "subnet-a9ab6cc2"
+  security_groups	= [ var.security_group_aws ]
+  #subnet_id = var.subnet_id
 
   tags = {
     Name = "Terraform-Test-Master",
