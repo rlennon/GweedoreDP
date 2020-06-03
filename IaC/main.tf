@@ -6,7 +6,7 @@ provider "aws" {
 
 module "vpc" {
   source = "./modules/vpc"
-}
+} 
 
 module "ec2_instances" {
   source = "./modules/ec2-instances"
