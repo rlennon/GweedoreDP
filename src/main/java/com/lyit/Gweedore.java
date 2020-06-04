@@ -1,4 +1,4 @@
-package com.lyit;
+package main.java.com.lyita.com.lyit;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,7 +10,7 @@ import java.io.PrintWriter;
 
 @WebServlet(name = "/")
 public class Gweedore extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	//Some sample logic to demo unit test
     	System.out.println("You are posting to GweedoreDP");
     }
