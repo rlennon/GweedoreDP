@@ -1,4 +1,17 @@
 # Input variable definitions
+
+variable "environment_prefix" {
+  description = "This is the environment where your webapp is deployed."
+  type = string
+}
+
+variable "tenant" {
+  description = "This is the relational space owner name"
+  type = string
+}
+
+
+/*
 variable "ami_id" {
   description = "The AWS AMI utilized for this project"
   type        = string
@@ -20,7 +33,7 @@ variable "instance_type" {
 variable "instance_count" {
   description = "The AWS EC2 instance count"
   type        = number
-  default = "2"
+  default = "1"
 }
 
 variable "key_file_path" {
@@ -73,3 +86,4 @@ variable "tags" {
         Inspector = "InspectorEC2InstanceLinux"
   }
 }
+*/
