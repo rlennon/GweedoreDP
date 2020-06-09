@@ -11,7 +11,8 @@ pipeline {
         stage('build') {
             steps{
                 script {
-                    dockerImage = docker.build registry + ":$BUILD_NUMBER"
+                    sh 'systemctl start docker'
+                    dockerImage = docker.build registry + ":latest"
                 }
             }
             post {
@@ -19,7 +20,7 @@ pipeline {
                     sh 'echo "Success!"'
                 }
                 failure {
-                    sh 'echo "Failure :("'
+                    sh 'echo "Failure"'
                 }
             }
         }
@@ -37,7 +38,7 @@ pipeline {
         }
         stage('Cleaning up') {
             steps{
-                sh "docker rmi $registry:$BUILD_NUMBER"
+                sh "docker rmi $registry:latest"
             }
         }
     }
