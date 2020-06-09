@@ -11,7 +11,6 @@ pipeline {
         stage('build') {
             steps{
                 script {
-                    sh 'systemctl start docker'
                     dockerImage = docker.build registry + ":latest"
                 }
             }
