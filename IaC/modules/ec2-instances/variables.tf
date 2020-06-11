@@ -1,64 +1,79 @@
 # Input variable definitions
 variable "ami_id" {
-  description = "The AWS AMI utilized for this project"
+  description = "The Amazon Machine Image ID"
   type        = string
-  default     = "ami-0f7919c33c90f5b58"
+
+  /*validation {
+    # regex(...) fails if it cannot find a match -- this functionality is experimental and not yet recommended
+    #including in project of demonstration of REGEX validation for security/data cleaning
+    condition     = can(regex("^ami-", var.ami_id))
+    error_message = "The image_id value must be a valid AMI id that beings with \"ami-\"."
+  }*/
+}
+
+variable "resource_group_name" {
+  description = "The name of team and project identifiers"
+  type        = string
+}
+
+variable "environment_prefix" {
+  description = "The name of team and project identifiers"
+  type        = string
+}
+
+variable "tenant" {
+  description = "The name of team and project identifiers"
+  type        = string
 }
 
 variable "region" {
-  description = "The AWS default region"
-  default = "us-east-2"
+  description = "The Amazon default region"
+  type        = string
 }
 
 variable "instance_type" {
   description = "The AWS instance type"
-  default = "t2.micro"
+  type        = string
+}
+
+variable "instance_count" {
+  description = "Number of instances of aws EC2 servers"
+  type        = number
 }
 
 variable "key_file_path" {
   description = "This is the path to private key managed by aws"
   type        = string
-  default     = "~/Downloads/Team-Marvel-GDP.pem"
 }
 
 variable "aws_team_key_id" {
   description = "This is the aws managed key"
   type        = string
-  default     = "Team-Marvel-GDP"
 }
 
 variable "team_name" {
   description = "This is the name of the team of owners."
   type        = string
-  default     = "Team_Marvel"
 }
 
 variable "app_name" {
-  description = "Path to the certificate key used to verify incoming connections."
+  description = "Default app name in Module"
   type        = string
-  default     = "GweedoreDP"
-}
-
-variable "prefix" {
-  description = "This is the environment where your webapp is deployed."
-  type = string
-  default = "dev"
 }
 
 variable "iam_profile_aws" {
-  description = "This is the available IAM profile"
+  description = "Global IAM profile"
   type = string
-  default = "AmazonSSMRoleForInstancesQuickSetup"
 }
 
 variable "security_group_aws" {
-  description = "This is the available IAM profile"
+  description = "Global security group profile"
   type = string
-  default = "launch-wizard-3"
 }
 
 variable "tags" {
-  description = "Custom tags for assignment"
+  description = "Global takes on resource"
   type = map(string)
-  default = {}
 }
+
+
