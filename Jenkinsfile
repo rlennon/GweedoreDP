@@ -19,7 +19,7 @@ pipeline {
                     sh 'echo "Success!"'
                 }
                 failure {
-                    sh 'echo "Failure"'
+                    sh 'echo "Build Failed"'
                 }
             }
         }
