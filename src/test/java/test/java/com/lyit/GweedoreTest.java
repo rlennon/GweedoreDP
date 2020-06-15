@@ -1,13 +1,11 @@
 package test.java.com.lyit;
 
 import static org.junit.Assert.*;
-
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
-
 import javax.servlet.ServletException;
-
+import main.java.com.lyita.com.lyit.Gweedore;
 import org.junit.Test;
 
 public class GweedoreTest {

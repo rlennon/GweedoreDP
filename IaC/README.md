@@ -51,17 +51,17 @@ Team Marvel has selected Terraform to *provision* EC2 servers.
 
 1. There are many ways and great tools to perform provisioning (Ansible, CloudFormation, etc). 
    Terraform is one option, though one school of thought is to use Terraform for provisioning 
-   and Ansible for configuration management.
+   and Ansible for configuration management.  We tried to apply this school of thought in this project as example.
    
 2. Our example reflects only a small sample of IaC using Terraform, but the entire infrastructure
    can be built out to promote immutability, version control, and recovery.
    
 2. Security Considerations:  
-   -Do no hard code credentials/keys into Terraform scripts, especially when pushed to VC like Github
-   -Linux/Ubuntu users should be restricted
-   -Secret keys should be carefully stored and clearly logged for tracking as sensitive risk elements
-   -IAM resources should be carefully provisioned (e.g. only allow staging or prod, restrict access least privilege, etc)
-   -IaC should be treated as code adhering to the same security policies as code development
-   -Misconfigurations, default configurations, ad-hoc config changes are all triggers of security risks
-   -Security is everyone's responsibility
+   - Do no hard code credentials/keys into Terraform scripts, especially when pushed to VC like Github
+   - Linux/Ubuntu users should be restricted
+   - Secret keys should be carefully stored and clearly logged for tracking as sensitive risk elements
+   - IAM resources should be carefully provisioned (e.g. only allow staging or prod, restrict access least privilege, etc)
+   - IaC should be treated as code adhering to the same security policies as code development
+   - Misconfigurations, default configurations, ad-hoc config changes are all triggers of security risks
+   - Security is everyone's responsibility
 
