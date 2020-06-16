@@ -133,6 +133,7 @@ These are the current Risks on the project, re-aligned on a weekly basis
     Mobile phones on silent.
     Everyone has equal voice and valuable contribution.
     Keep your language and tone professional at all times.
+    Rolling scrum masters on weekly bases
     Be honest.
 
 ### Communication
