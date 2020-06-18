@@ -10,8 +10,7 @@ variable "tenant" {
   type = string
 }
 
-
-/*
+/*------------------------------------------
 variable "ami_id" {
   description = "The AWS AMI utilized for this project"
   type        = string

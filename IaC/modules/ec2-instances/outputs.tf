@@ -1,3 +1,2 @@
-# Output variable definitions
-
+# Output variable definitions 
 

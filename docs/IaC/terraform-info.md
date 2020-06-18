@@ -1,4 +1,4 @@
-| [Return to README.MD](../../README.md)
+| [Return to README.MD](../README.md)
 | ---------------------------------------------------- |
 
 # Infrastructure as Code with Terraform Example
@@ -35,8 +35,18 @@ Team Marvel has selected Terraform to *provision* EC2 servers.
       #change into new filder directory
       $ cd terraform-for-aws
       
-      #begin creating Terraform resources/files
+      #begin creating Terraform resources/files (from scatch or clone the Github repo)
       $ nano create-aws-ec2.tf
+
+      #use variables (e.g. tfvars) to deploy to desired environment (staging vs production)
+
+      #Helpful commands:
+      terraform init #for initalizing/updating
+      terraform get #for getting modules
+      terraform refresh #for refreshing tf
+      terraform terraform plan -var-file=terraform.tfvars #can use custom var files with variables (e.g. for secrets or environments)
+      terraform terraform apply -var-file=terraform.tfvars
+      terraform terraform destroy -var-file=terraform.tfvars
       ```
       
 ## Why Terraform?
@@ -46,22 +56,20 @@ Team Marvel has selected Terraform to *provision* EC2 servers.
    3. Quick setup for this small project example
    4. Terraform supports many different services/vendors
    5. Terraform is free and open source
+   6. Terraform is used at our company hence a valuable tool to learn/explore
    
-## Team Marvel Considerations
+## Team Marvel Considerations/Learnings
 
-1. There are many ways and great tools to perform provisioning (Ansible, CloudFormation, etc). 
-   Terraform is one option, though one school of thought is to use Terraform for provisioning 
-   and Ansible for configuration management.
+1. There are many ways and great tools to perform provisioning/config management (Ansible,   CloudFormation, etc). As our project was primarily AWS, using CloudFormation was the easiest option.  However, Terraform is utilized at our company and the project was an opportunity to explore/learn Terraform.  As one architecture, we would use Terraform for provisioning (e.g. EC2/VPC/SecurityGroups/etc) and potentially other tools (Packer for templating and Ansible for configuration management).  For the purposes of this project regarding Infrastructure as Code, we only utilize the Terraform tool but recognize the value of integrating with other tools for true CI/CD pipeline integration.
    
-2. Our example reflects only a small sample of IaC using Terraform, but the entire infrastructure
-   can be built out to promote immutability, version control, and recovery.
+2. Our example reflects only a small sample of IaC using Terraform deployed locally, but the entire infrastructure can be built out to promote immutability, version control, recovery, and automated deployments (e.g. via Jenkins job).
    
-2. Security Considerations:  
-   -Do no hard code credentials/keys into Terraform scripts, especially when pushed to VC like Github
-   -Linux/Ubuntu users should be restricted
-   -Secret keys should be carefully stored and clearly logged for tracking as sensitive risk elements
-   -IAM resources should be carefully provisioned (e.g. only allow staging or prod, restrict access least privilege, etc)
-   -IaC should be treated as code adhering to the same security policies as code development
-   -Misconfigurations, default configurations, ad-hoc config changes are all triggers of security risks
-   -Security is everyone's responsibility
-
+3. Security Considerations:  
+   - Do not hard code credentials/keys into Terraform scripts, especially when pushed to VC like Github
+   - Secret keys should be carefully stored and clearly logged for tracking as sensitive risk elements
+   - IAM resources should be carefully provisioned (e.g. only allow staging or prod, restrict access   least privilege, etc)
+   - IaC should be treated as code adhering to the same security policies as code development (RegEx, automated tests/unit tests, scanning tools, code reviewers/approvers, etc)
+   - Misconfigurations, default configurations, ad-hoc config changes are all triggers of security risks
+   - Security is everyone's responsibility across the DevOps pipeline
+   - Back-end should be used to securely manage Terraform state (e.g. S3 bucket)
+   - Use gitignore file to avoid uploading files/sensitive data to Github

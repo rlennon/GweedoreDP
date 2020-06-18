@@ -1,29 +1,23 @@
 # Terraform configuration
 
-/* 
-terraform init #for initalizing/update
-terraform get #for getting modules
-terraform refresh #for refreshing
-terraform terraform plan -var-file=terraform.tfvars #can use custom var files with variables (e.g. for secrets, or other envs)
-terraform terraform apply -var-file=terraform.tfvars
-terraform terraform destroy -var-file=terraform.tfvars
-*/
-
+#Set provider details and credentials
 provider "aws" {
   region     = "us-east-2" #leaving blank will prompt for value at plan/apply time
-  #credentials/config- using Amazon CLI -- can use tfvars, or key vars, etc
+  #credentials/config- using Amazon CLI -- can use tfvars, or key vars, export, etc
   #access_key = "my-access-key"
   #secret_key = "my-secret-key"
 }
 
+#Set tags to be applied to EC2 instance
 locals {
   tags = merge({ 
     terraform = "true", 
     Inspector = "InspectorEC2InstanceLinux"
-    Name = "gweedoredp-webserver-${var.environment_prefix}",
+    Name = "gweedoredp-${var.environment_prefix}",
     }, {environment = var.environment_prefix, tenant = var.tenant})
 }
 
+#Set module paramaters to define/deploy as desired
 module "ec2_instances" {
   source = "./modules/ec2-instances"
   instance_count = "1"
@@ -54,7 +48,6 @@ module "vpc" {
 /*
 module "website_s3_bucket" {
   source = "./modules/aws-s3-static-website-bucket"
-
   bucket_name = "gweedoredp_s3_bucket"
 
   tags = {
