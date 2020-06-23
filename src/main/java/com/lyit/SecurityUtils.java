@@ -1,25 +1,27 @@
 package com.lyit;
 
-import org.jasypt.util.text.BasicTextEncryptor;
+import org.jasypt.encryption.pbe.StandardPBEStringEncryptor;
 
 public class SecurityUtils {
 
-    public String encryptString()  {
+    public String encryptString(String strToEncrypt)  {
 
-        BasicTextEncryptor textEncryptor = new BasicTextEncryptor();
-        textEncryptor.setPassword("random");
+    	StandardPBEStringEncryptor encryptor = new StandardPBEStringEncryptor();
+    	encryptor.setPassword("password");
+    	encryptor.setAlgorithm("PBEWithMD5AndTripleDES");
 
-        String myEncryptedText = textEncryptor.encrypt("sjn496gpDh0jM5N4r6Ib");
+    	String encryptedText = encryptor.encrypt(strToEncrypt);
 
-        return myEncryptedText;
+        return encryptedText;
     }
 
-    public String decryptString()  {
+    public String decryptString(String strToDecrypt)  {
 
-        BasicTextEncryptor textEncryptor = new BasicTextEncryptor();
-        textEncryptor.setPassword("random");
-
-        String decryptedText = textEncryptor.decrypt("sjn496gpDh0jM5N4r6Ib");
+    	StandardPBEStringEncryptor encryptor = new StandardPBEStringEncryptor();
+    	encryptor.setPassword("password");
+    	encryptor.setAlgorithm("PBEWithMD5AndTripleDES");
+    	
+    	String decryptedText = encryptor.decrypt(strToDecrypt);
 
         return decryptedText;
     }
