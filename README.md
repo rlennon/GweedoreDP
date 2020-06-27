@@ -133,6 +133,7 @@ These are the current Risks on the project, re-aligned on a weekly basis
     Mobile phones on silent.
     Everyone has equal voice and valuable contribution.
     Keep your language and tone professional at all times.
+    Rolling scrum masters on weekly bases
     Be honest.
 
 ### Communication
@@ -178,3 +179,8 @@ The teams current story point velocity is "<6>".
 16th May 2020
 Research and a working prototype with a sample maven java project with jenkins pipeline to compile the code and run unit tests have been created.
 
+<<<<<<< HEAD
+=======
+Rotating Schedule
+
+>>>>>>> l00156762/javadoc
