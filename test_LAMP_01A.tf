@@ -16,7 +16,7 @@
 
 ##variable "access_key" { default = "your key here" }
 ##variable "secret_key" { default = "your key here" }
-variable "region" { default = "us-east-1" }
+variable "region" { default = "us-east-2" }
 variable "vpc_cidr" { default = "10.0.0.0/16" }
 variable "subnet_one_cidr" { default = "10.0.1.0/24" }
 variable "subnet_two_cidr" { default = ["10.0.2.0/24", "10.0.3.0/24"] }
@@ -198,18 +198,13 @@ resource "aws_security_group_rule" "db_egress" {
   security_group_id = aws_security_group.db_security_group.id
 }
 
-resource "aws_key_pair" "terraform-keys2" {
-  key_name = "terraform-keys2"
-  ##public_key = "terraform-keys2.pub"
-  public_key = file("./terraform-keys2.pub")
-}
+
 
 ## create EC2 instance
 resource "aws_instance" "my_web_instance" {
   ami                    = lookup(var.images, var.region)
   instance_type          = "t2.micro"
   key_name               = "terraform-keys2"
-  #public_key = file("./terraform-keys2.pub")
   vpc_security_group_ids = [aws_security_group.web_security_group.id]
   subnet_id              = aws_subnet.myvpc_public_subnet.id
   tags = {
@@ -229,24 +224,29 @@ resource "aws_instance" "my_web_instance" {
       "sudo yum install -y mysql php php-mysql",
 	  ]
   }
-  provisioner "file" { #copy the index file form local to remote
-   source      = "d:\\terraform\\index.php"
-    destination = "/tmp/index.php"
-  }
-  provisioner "remote-exec" {
-	inline = [
-	   "sudo mv /tmp/index.php /var/www/html/index.php"
-	   ]
-	}
+  #provisioner "file" { #copy the index file form local to remote
+  #  #source      = "d:\\terraform\\index.php"
+  #  source      = "index.php"
+  #  destination = "/tmp/index.php"
+  #}
+  #provisioner "remote-exec" {
+  #  inline = [
+  #    "sudo mv /tmp/index.php /var/www/html/index.php"
+  #  ]
+  #}
  
   connection {
     type     = "ssh"
-    user     = "centos"
+    user     = "ec2-user"
     password = ""
     host     = self.public_ip 
+    #host = var.host 
     #copy <private.pem> to your local instance to the home directory
 	#chmod 600 id_rsa.pem
-    private_key = file("../Team-Marvel-GDP.pem")
+    #private_key = file("terraform-keys2-out.pem")
+    #private_key = file("/home/L00156763/.ssh/id_rsa.pub")
+    agent       = true
+    timeout     = "1m"
 }
   
 }
